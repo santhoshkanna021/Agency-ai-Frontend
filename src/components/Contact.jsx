@@ -4,7 +4,7 @@ import assets from "../assets/assets";
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
-  const [isSending, setIsSending] = useState(false); // Added for button disable
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -15,14 +15,11 @@ const Contact = () => {
     setStatus("Sending...");
     setIsSending(true);
 
+    const params = new URLSearchParams(formData).toString(); // Convert form data to query string
+
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbwxOW3yAWbNRzAqteQlT8Zckmfi0cBrn4ZyGeB_xuR-avNiA56CP7OZjVwabudeH-AuqA/exec",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData)
-        }
+        `https://script.google.com/macros/s/AKfycbxxPzAvtrNe8VLfCDcJcPOsQFuRBw-z5CISyUyjhUATefYA6hsdLSm6LW4Mj-7l1A29Tw/exec?${params}`
       );
 
       const result = await response.json();
