@@ -4,7 +4,7 @@
 
 * {
   font-family: "Manrope", sans-serif;
-  overflow-x: hidden;
+  overflow-x:visible;
   font-weight: 500;
   scroll-behavior: smooth;
   cursor: url('/src/assets/cursor-icon.png'), auto;
