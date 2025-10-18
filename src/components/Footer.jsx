@@ -56,7 +56,7 @@ const Footer = () => {
 
       {/* Bottom Copyright */}
       <div className="w-full text-center py-4 border-t border-gray-200 text-sm text-[#8A8E9B]">
-        Copyright 2025 © GreatStack - All Right Reserved.
+        Copyright 2025 - All Right Reserved.
       </div>
 
     </div>
